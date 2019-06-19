@@ -12,6 +12,7 @@ $(TARGET): $(OBJECTS)
 	g++ $(LINK_FLAGS) -o $@ $^
 
 $(BUILD_DIR)/%.o: $(SOURCE_DIR)/%.cpp
+	@mkdir -p $(BUILD_DIR)
 	g++ $(COMPILE_FLAGS) -c -o $@ $<
 
 .PHONY: clean
